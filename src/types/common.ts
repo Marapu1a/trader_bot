@@ -1,8 +1,3 @@
-export interface StateMeta {
-  revision: number;
-  updatedAt: string | null;
-}
-
 export interface BalanceSnapshot {
   asset: string;
   total: number;
@@ -24,16 +19,4 @@ export interface OrderSnapshot {
 export interface InstrumentSnapshot {
   symbol: string;
   status: "active" | "inactive";
-}
-
-export interface ApplicationState {
-  meta: StateMeta;
-  account: {
-    balances: BalanceSnapshot[];
-    positions: PositionSnapshot[];
-    orders: OrderSnapshot[];
-  };
-  market: {
-    instruments: InstrumentSnapshot[];
-  };
 }

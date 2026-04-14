@@ -4,7 +4,7 @@ import { createRuntimeContext } from "../modes/runtimeMode.js";
 import { createStateStore } from "../state/store/createStateStore.js";
 
 export interface App {
-  start: () => Promise<void>;
+  start: () => void;
 }
 
 export function createApp(): App {
@@ -14,17 +14,18 @@ export function createApp(): App {
 
   return {
     start() {
+      const snapshot = stateStore.getSnapshot();
+
       logger.info(
         {
           mode: runtime.mode,
           exchange: runtime.exchange,
           testnet: env.BYBIT_TESTNET,
-          stateRevision: stateStore.getSnapshot().meta.revision,
+          stateRevision: snapshot.meta.revision,
+          stateSyncStatus: snapshot.meta.syncStatus,
         },
         "Application started",
       );
-
-      return Promise.resolve();
     },
   };
 }
