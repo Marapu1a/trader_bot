@@ -1,0 +1,108 @@
+{
+  "orders": [
+    {
+      "client_id": "x-MG43PCSNBBCUT65f5dde20b9888281",
+      "side": "buy",
+      "amount": "0.00014000",
+      "price": "77141.865042000000",
+      "type": "LIMIT_MAKER"
+    },
+    {
+      "client_id": "x-MG43PCSNBBCUT65f5dde3f4d298281",
+      "side": "buy",
+      "amount": "0.00014000",
+      "price": "77098.15194333333056420087814",
+      "type": "LIMIT_MAKER"
+    }
+  ],
+  "stage": "finished",
+  "connector_status": {
+    "symbols_mapping_initialized": true,
+    "order_books_initialized": true,
+    "account_balance": true,
+    "trading_rule_initialized": true,
+    "user_stream_initialized": true
+  },
+  "balances_before": {
+    "BTC": "1.00000000",
+    "USDT": "10000.00000000"
+  },
+  "config": {
+    "id": "RLPLW7dLWAmN39FkmRs8ZDSvFgWaAZJNSb8eqKapadG",
+    "type": "grid_executor",
+    "timestamp": 1793706623.546526,
+    "controller_id": "main",
+    "connector_name": "binance_testnet",
+    "trading_pair": "BTC-USDT",
+    "start_price": "76995.28583000000",
+    "end_price": "77303.88417000000",
+    "limit_price": "0",
+    "side": 1,
+    "total_amount_quote": "45",
+    "min_spread_between_orders": "0.001",
+    "min_order_amount_quote": "10",
+    "max_open_orders": 2,
+    "max_orders_per_batch": 1,
+    "order_frequency": 2,
+    "activation_bounds": null,
+    "safe_extra_spread": "0.0001",
+    "triple_barrier_config": {
+      "stop_loss": null,
+      "take_profit": "0.001",
+      "time_limit": null,
+      "trailing_stop": null,
+      "open_order_type": 3,
+      "take_profit_order_type": 3,
+      "stop_loss_order_type": 1,
+      "time_limit_order_type": 1
+    },
+    "leverage": 1,
+    "level_id": null,
+    "deduct_base_fees": false,
+    "keep_position": true,
+    "coerce_tp_to_step": false
+  },
+  "grid_levels": 4,
+  "close_type": "CloseType.EARLY_STOP",
+  "final_orders": [
+    {
+      "clientOrderId": "x-MG43PCSNBBCUT65f5dde20b9888281",
+      "orderId": 10096405,
+      "status": "CANCELED",
+      "side": "BUY",
+      "type": "LIMIT_MAKER",
+      "executedQty": "0.00000000"
+    },
+    {
+      "clientOrderId": "x-MG43PCSNBBCUT65f5dde3f4d298281",
+      "orderId": 10096408,
+      "status": "CANCELED",
+      "side": "BUY",
+      "type": "LIMIT_MAKER",
+      "executedQty": "0.00000000"
+    }
+  ],
+  "events": [
+    {
+      "type": "BuyOrderCreatedEvent",
+      "order_id": "x-MG43PCSNBBCUT65f5dde20b9888281"
+    },
+    {
+      "type": "BuyOrderCreatedEvent",
+      "order_id": "x-MG43PCSNBBCUT65f5dde3f4d298281"
+    },
+    {
+      "type": "OrderCancelledEvent",
+      "order_id": "x-MG43PCSNBBCUT65f5dde3f4d298281"
+    },
+    {
+      "type": "OrderCancelledEvent",
+      "order_id": "x-MG43PCSNBBCUT65f5dde20b9888281"
+    }
+  ],
+  "balances_after": {
+    "BTC": "1.00000000",
+    "USDT": "10000.00000000"
+  },
+  "passed": true
+}

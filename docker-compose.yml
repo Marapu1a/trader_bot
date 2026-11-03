@@ -1,0 +1,22 @@
+services:
+  hummingbot:
+    image: trader-bot-testnet:local
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # Starting this container does not start trading.
+    command: ["sleep", "infinity"]
+    init: true
+    restart: "no"
+    volumes:
+      - ./conf:/home/hummingbot/conf
+      - ./data:/home/hummingbot/data
+      - ./logs:/home/hummingbot/logs
+      - ./test:/home/hummingbot/test:ro
+      - ./tools:/home/hummingbot/tools:ro
+      - ./pyproject.toml:/home/hummingbot/pyproject.toml:ro
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
